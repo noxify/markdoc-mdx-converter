@@ -22,7 +22,6 @@ const config = {
   importOrderTypeScriptVersion: "4.4.0",
   printWidth: 100,
   semi: false,
- 
 }
 
 export default config
