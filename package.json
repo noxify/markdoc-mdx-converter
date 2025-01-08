@@ -1,0 +1,48 @@
+{
+  "name": "@noxify/markdoc-mdx-converter",
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "pkgroll --clean-dist",
+    "ci:publish": "pnpm build && pnpm publish -r --access public --publish-branch main && pnpm changeset tag",
+    "ci:version": "pnpm changeset version && pnpm install --no-frozen-lockfile && git add .",
+    "clean": "git clean -xdf .cache node_modules",
+    "dev": "pkgroll --watch",
+    "format": "prettier --check . --ignore-path ./.gitignore",
+    "format:fix": "pnpm format --write",
+    "lint": "eslint .",
+    "lint:fix": "pnpm lint --fix",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "prettier": "./prettier.config.js",
+  "devDependencies": {
+    "@changesets/cli": "^2.27.11",
+    "@eslint/compat": "^1.2.4",
+    "@ianvs/prettier-plugin-sort-imports": "4.4.0",
+    "@types/eslint__js": "8.42.3",
+    "@types/node": "22.10.5",
+    "eslint": "9.17.0",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-package-json": "0.19.0",
+    "jsonc-eslint-parser": "2.4.0",
+    "pkgroll": "2.6.1",
+    "prettier": "3.4.2",
+    "typescript": "5.7.3",
+    "typescript-eslint": "8.19.0",
+    "vitest": "2.1.8"
+  },
+  "packageManager": "pnpm@9.15.3",
+  "engines": {
+    "node": ">=22"
+  }
+}
