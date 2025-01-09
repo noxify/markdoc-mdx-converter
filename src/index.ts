@@ -61,6 +61,7 @@ function generateCodeblock({
 }
 
 function parseTag(node: Tag): Record<string, unknown> {
+  console.log({ tagName: node })
   switch (node.name) {
     case "h1":
       return generateHeading({ level: 1, children: node.children })
@@ -85,6 +86,39 @@ function parseTag(node: Tag): Record<string, unknown> {
         meta: node.attributes.meta as Record<string, unknown> | undefined,
         children: node.children,
       })
+
+    case "Accordion":
+      return {
+        type: "mdxJsxFlowElement",
+        name: "Accordion",
+        // attributes: node.attributes.map((ele) => {
+        //   const [name, value] = Object.entries(ele)
+
+        //   return { type: "mdxJsxAttribute", name, value }
+        // }),
+        children: node.children.map((ele) => {
+          if (!isTag(ele)) {
+            return { type: "text", value: ele }
+          }
+
+          return parseTag(ele)
+        }),
+      }
+
+    case "AccordionItem":
+      console.log({ node })
+      return {
+        type: "mdxJsxFlowElement",
+        name: "AccordionItem",
+        attributes: [],
+        children: node.children.map((ele) => {
+          if (!isTag(ele)) {
+            return { type: "text", value: ele }
+          }
+
+          return parseTag(ele)
+        }),
+      }
   }
 
   return {}
@@ -97,8 +131,8 @@ export function transformDocument({
 }: {
   document: string
   config: Config
-  targetFile: string
-}) {
+  targetFile?: string
+}): { transformedTree: Root /*rendered: string */ } | null {
   const mdocAst = Markdoc.parse(document)
   const mdocTransformed = Markdoc.transform(mdocAst, config)
 
@@ -111,11 +145,13 @@ export function transformDocument({
   }
 
   if (!isTag(mdocTransformed)) {
-    return output
+    console.log("not a tag type ")
+    return null
   }
 
   for (const node of mdocTransformed.children) {
     if (!isTag(node)) {
+      console.log("not a tag type ", node)
       continue
     }
     output.push(parseTag(node))
@@ -124,10 +160,10 @@ export function transformDocument({
   const tree = {
     type: "root",
     children: output,
-  } as Root
+  } as unknown as Root
 
   return {
     transformedTree: tree,
-    rendered: toMarkdown(tree, { extensions: [frontmatterToMarkdown("yaml"), mdxToMarkdown()] }),
+    //rendered: toMarkdown(tree, { extensions: [frontmatterToMarkdown("yaml"), mdxToMarkdown()] }),
   }
 }

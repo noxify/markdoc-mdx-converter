@@ -23,7 +23,7 @@ Eiusmod aliquip mollit incididunt est amet proident eu Lorem non laboris duis ex
 
 Eiusmod aliquip mollit incididunt est amet proident eu Lorem non laboris duis ex commodo.
 
-###### Heaing 6 with `inline code tag` code
+###### Heaing 6 with `inline code` code
 
 Eiusmod aliquip mollit incididunt est amet proident eu Lorem non laboris duis ex commodo.
 
