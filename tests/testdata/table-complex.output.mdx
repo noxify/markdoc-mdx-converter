@@ -1,0 +1,162 @@
+---
+title: Test document title
+description: Some description
+---
+
+## Complex table w/o colspan
+
+<TableBuilder
+  columns={[
+    {
+      title: "Item",
+    },
+    {
+      title: "In Stock",
+    },
+    {
+      title: "Price",
+    },
+  ]}
+  data={[
+    [
+      {
+        value: "Python Hat",
+      },
+      {
+        value: "True",
+      },
+      {
+        value: "23.99",
+      },
+    ],
+    [
+      {
+        value: "SQL Hat",
+      },
+      {
+        value: "True",
+      },
+      {
+        value: "13.99",
+      },
+    ],
+    [
+      {
+        value: "Codecademy Hat",
+      },
+      {
+        value: "True",
+      },
+      {
+        value: "9.99",
+      },
+    ],
+  ]}
+/>
+
+## Complex table w/ colspan
+
+<TableBuilder
+  columns={[
+    {
+      title: "Item",
+    },
+    {
+      title: "In Stock",
+    },
+    {
+      title: "Price",
+    },
+  ]}
+  data={[
+    [
+      {
+        value: "Python Hat",
+      },
+      {
+        value: "True",
+      },
+      {
+        value: "23.99",
+      },
+    ],
+    [
+      {
+        value: "SQL Hat",
+      },
+      {
+        value: "True",
+      },
+      {
+        value: "13.99",
+      },
+    ],
+    [
+      {
+        value: "Codecademy Hat",
+      },
+      {
+        options: {
+          colSpan: 2,
+        },
+        value: "Not in stock",
+      },
+    ],
+  ]}
+/>
+
+## Complex table w/ rich content ( maybe out of scope? )
+
+<TableBuilder
+  columns={[
+    {
+      title: "Item",
+    },
+    {
+      title: "In Stock",
+    },
+    {
+      title: "Price",
+    },
+  ]}
+  data={[
+    [
+      {
+        value: "Python Hat",
+      },
+      {
+        value: (
+            <ul>
+                <li>list element 1</li>
+                <li>list element 2</li>
+            </ul>
+        ),
+      },
+      {
+        value: "23.99",
+      },
+    ],
+    [
+      {
+        value: "SQL Hat",
+      },
+      {
+        value: "True",
+      },
+      {
+        value: "13.99",
+      },
+    ],
+    [
+      {
+        value: "Codecademy Hat",
+      },
+      {
+        value: "True"
+      },
+      {
+        value: "9.99",
+      },
+    ],
+  ]}
+/>
