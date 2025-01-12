@@ -21,6 +21,7 @@
     "format:fix": "pnpm format --write",
     "lint": "eslint .",
     "lint:fix": "pnpm lint --fix",
+    "pkg-new-release": "npx pkg-pr-new publish",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
   },
