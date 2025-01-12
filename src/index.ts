@@ -1,8 +1,8 @@
 import type { Config, RenderableTreeNode } from "@markdoc/markdoc"
 import type { Root } from "mdast"
 import Markdoc, { Tag } from "@markdoc/markdoc"
-import { frontmatterFromMarkdown, frontmatterToMarkdown } from "mdast-util-frontmatter"
-import { mdxFromMarkdown, mdxToMarkdown } from "mdast-util-mdx"
+import { frontmatterToMarkdown } from "mdast-util-frontmatter"
+import { mdxToMarkdown } from "mdast-util-mdx"
 import { toMarkdown } from "mdast-util-to-markdown"
 
 function isTag(ele?: unknown) {
@@ -13,8 +13,16 @@ function generateHeading({ level, children }: { level: number; children: Rendera
   return {
     type: "heading",
     depth: level,
-    children: children.map((ele) => {
+    children: children.map((ele, index, arr) => {
       if (!isTag(ele)) {
+        // not sure if this is required
+        // but since we could have annotations in markdoc ( e.g. `{% #custom-heading-id %}` )
+        // we have an additional space at the end, which would result in
+        // `## Heading 2&#x20;` instead of `## Heading`
+        if (index === arr.length - 1) {
+          // eslint-disable-next-line @typescript-eslint/no-base-to-string
+          return { type: "text", value: ele?.toString().trimEnd() }
+        }
         return { type: "text", value: ele }
       }
 
@@ -60,8 +68,42 @@ function generateCodeblock({
   }
 }
 
+function generateAccordion(node: Tag) {
+  return {
+    type: "mdxJsxFlowElement",
+    name: "Accordion",
+    attributes: Object.entries(node.attributes).map(([attributeName, attributeValue]) => {
+      return { type: "mdxJsxAttribute", name: attributeName, value: attributeValue as unknown }
+    }),
+    children: node.children.map((ele) => {
+      if (!isTag(ele)) {
+        return { type: "text", value: ele }
+      }
+
+      return parseTag(ele)
+    }),
+  }
+}
+
+function generateAccordionItem(node: Tag) {
+  return {
+    type: "mdxJsxFlowElement",
+    name: "AccordionItem",
+    attributes: Object.entries(node.attributes).map(([attributeName, attributeValue]) => {
+      return { type: "mdxJsxAttribute", name: attributeName, value: attributeValue as unknown }
+    }),
+    children: node.children.map((ele) => {
+      if (!isTag(ele)) {
+        return { type: "text", value: ele }
+      }
+
+      return parseTag(ele)
+    }),
+  }
+}
+
 function parseTag(node: Tag): Record<string, unknown> {
-  console.log({ tagName: node })
+  // console.log({ tagName: node })
   switch (node.name) {
     case "h1":
       return generateHeading({ level: 1, children: node.children })
@@ -88,37 +130,10 @@ function parseTag(node: Tag): Record<string, unknown> {
       })
 
     case "Accordion":
-      return {
-        type: "mdxJsxFlowElement",
-        name: "Accordion",
-        // attributes: node.attributes.map((ele) => {
-        //   const [name, value] = Object.entries(ele)
-
-        //   return { type: "mdxJsxAttribute", name, value }
-        // }),
-        children: node.children.map((ele) => {
-          if (!isTag(ele)) {
-            return { type: "text", value: ele }
-          }
-
-          return parseTag(ele)
-        }),
-      }
+      return generateAccordion(node)
 
     case "AccordionItem":
-      console.log({ node })
-      return {
-        type: "mdxJsxFlowElement",
-        name: "AccordionItem",
-        attributes: [],
-        children: node.children.map((ele) => {
-          if (!isTag(ele)) {
-            return { type: "text", value: ele }
-          }
-
-          return parseTag(ele)
-        }),
-      }
+      return generateAccordionItem(node)
   }
 
   return {}
@@ -127,12 +142,11 @@ function parseTag(node: Tag): Record<string, unknown> {
 export function transformDocument({
   document,
   config,
-  targetFile,
 }: {
   document: string
   config: Config
   targetFile?: string
-}): { transformedTree: Root /*rendered: string */ } | null {
+}): { transformedTree: Root; rendered: string } | null {
   const mdocAst = Markdoc.parse(document)
   const mdocTransformed = Markdoc.transform(mdocAst, config)
 
@@ -145,13 +159,11 @@ export function transformDocument({
   }
 
   if (!isTag(mdocTransformed)) {
-    console.log("not a tag type ")
     return null
   }
 
   for (const node of mdocTransformed.children) {
     if (!isTag(node)) {
-      console.log("not a tag type ", node)
       continue
     }
     output.push(parseTag(node))
@@ -164,6 +176,6 @@ export function transformDocument({
 
   return {
     transformedTree: tree,
-    //rendered: toMarkdown(tree, { extensions: [frontmatterToMarkdown("yaml"), mdxToMarkdown()] }),
+    rendered: toMarkdown(tree, { extensions: [frontmatterToMarkdown("yaml"), mdxToMarkdown()] }),
   }
 }
