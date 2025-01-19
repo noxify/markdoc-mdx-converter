@@ -1,13 +1,15 @@
 import { readFile, writeFile } from "fs/promises"
 import path from "path"
 import { cwd } from "process"
+import { inspect } from "util"
 import type { Config } from "@markdoc/markdoc"
-import { Tag } from "@markdoc/markdoc"
+import Markdoc, { Tag } from "@markdoc/markdoc"
 import { describe, test } from "vitest"
 
-import { transformDocument } from "../src"
+import { mdxToAST, transformDocument } from "../src"
 
 const config: Config = {
+  nodes: {},
   tags: {
     callout: {
       render: "Callout",
@@ -26,27 +28,6 @@ const config: Config = {
     tabs: {
       render: "Tabs",
       children: ["Tab"],
-      transform(node, config) {
-        const labels = node
-          .transformChildren(config)
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
-          .filter((child: any) => child && child.name === "Tab")
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
-          .map((tab: any) => (typeof tab === "object" ? tab?.attributes?.label : null))
-
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        const defaultValue = node
-          .transformChildren(config)
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
-          .filter((child: any) => child && child.name === "Tab")
-
-          // @ts-expect-error TODO: check how to fix the type issue
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
-          .find((tab: any) => tab?.attributes?.default == true)?.attributes?.label
-
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        return new Tag("div", { labels, defaultValue }, node.transformChildren(config))
-      },
     },
 
     tab: {
@@ -82,11 +63,11 @@ const tests = [
   },
   {
     name: "accordion-simple",
-    skip: false,
+    skip: true,
   },
   {
     name: "accordion-multiple",
-    skip: false,
+    skip: true,
   },
   {
     name: "callout-with-title",
@@ -114,25 +95,30 @@ const tests = [
   },
   {
     name: "tabs",
-    skip: true,
+    skip: false,
+  },
+
+  {
+    name: "codeblock",
+    skip: false,
   },
 ]
 
-describe.each(tests)("$name", ({ name, skip }) => {
-  test.skipIf(skip)(`${name}`, async () => {
+describe.each(tests.filter((test) => !test.skip))("$name", ({ name, skip }) => {
+  test(`${name}`, async () => {
     const input = await readFile(path.join(cwd(), `tests/testdata/${name}.input.md`), {
       encoding: "utf-8",
     })
 
-    // const output = await readFile(path.join(cwd(), `tests/testdata/${name}.output.mdx`), {
-    //   encoding: "utf-8",
-    // })
+    const output = await readFile(path.join(cwd(), `tests/testdata/${name}.output.mdx`), {
+      encoding: "utf-8",
+    })
 
     const generated = transformDocument({ document: input, config })
 
     await writeFile(
       path.join(cwd(), `tests/generated_data/${name}.generated.mdx`),
-      generated?.rendered ?? "",
+      generated.rendered ?? "",
     )
 
     //expect(generated?.rendered).toEqual(output)

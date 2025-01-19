@@ -4,10 +4,10 @@ import type { MdxJsxFlowElement } from "mdast-util-mdx"
 import { generateAttributes, isTag } from "../helpers"
 import { parseAsTextElement, parseTag } from "../parse-tag"
 
-export function generateAccordionItem({ node }: { node: Tag }): MdxJsxFlowElement {
+export function generateCallout({ node }: { node: Tag }): MdxJsxFlowElement {
   return {
     type: "mdxJsxFlowElement",
-    name: "AccordionItem",
+    name: "Callout",
     attributes: generateAttributes(node.attributes),
     children: node.children.map((ele) => {
       if (!isTag(ele)) {

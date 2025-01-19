@@ -1,18 +1,17 @@
 import type { Tag } from "@markdoc/markdoc"
+import type { MdxJsxFlowElement } from "mdast-util-mdx"
 
-import { isTag } from "../helpers"
-import { parseTag } from "../parse-tag"
+import { generateAttributes, isTag } from "../helpers"
+import { parseAsTextElement, parseTag } from "../parse-tag"
 
-export function generateAccordion({ node }: { node: Tag }) {
+export function generateAccordion({ node }: { node: Tag }): MdxJsxFlowElement {
   return {
     type: "mdxJsxFlowElement",
     name: "Accordion",
-    attributes: Object.entries(node.attributes).map(([attributeName, attributeValue]) => {
-      return { type: "mdxJsxAttribute", name: attributeName, value: attributeValue as unknown }
-    }),
+    attributes: generateAttributes(node.attributes),
     children: node.children.map((ele) => {
       if (!isTag(ele)) {
-        return { type: "text", value: ele }
+        return parseAsTextElement(ele)
       }
 
       return parseTag(ele)

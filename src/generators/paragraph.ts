@@ -1,17 +1,16 @@
-import type { RenderableTreeNode } from "@markdoc/markdoc"
+import type { Tag } from "@markdoc/markdoc"
+import type { RootContent } from "mdast"
 
-import { isTag } from "../helpers"
-import { parseTag } from "../parse-tag"
-
-export function generateParagraph({ children }: { children: RenderableTreeNode[] }) {
-  return {
+export function generateParagraph(node: Tag): RootContent {
+  const paragraphDefinition: RootContent = {
     type: "paragraph",
-    children: children.map((ele) => {
-      if (!isTag(ele)) {
-        return { type: "text", value: ele }
-      }
-
-      return parseTag(ele)
-    }),
+    children: [
+      {
+        type: "text",
+        value: node.children[0] as string,
+      },
+    ],
   }
+
+  return paragraphDefinition
 }

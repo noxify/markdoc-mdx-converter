@@ -1,12 +1,24 @@
 import type { Tag } from "@markdoc/markdoc"
+import type { PhrasingContent, RootContent } from "mdast"
+import type { MdxJsxFlowElement, MdxJsxTextElement } from "mdast-util-mdx"
 
 import * as generators from "./generators"
 
-export function parseTag(node: Tag): Record<string, unknown> {
+export function parseAsTextElement(value: unknown) {
+  return {
+    type: "text",
+    value: value as string,
+  }
+}
+
+export function parseTag(
+  node: Tag,
+): RootContent | PhrasingContent | undefined | MdxJsxFlowElement | MdxJsxTextElement {
   switch (node.name) {
     case "h1":
       return generators.generateHeading({ level: 1, children: node.children })
     case "h2":
+      console.log({ node })
       return generators.generateHeading({ level: 2, children: node.children })
     case "h3":
       return generators.generateHeading({ level: 3, children: node.children })
@@ -23,17 +35,25 @@ export function parseTag(node: Tag): Record<string, unknown> {
       return generators.generateInlineCode({ children: node.children })
     case "pre":
       return generators.generateCodeblock({
-        language: node.attributes.lang as string | undefined,
-        meta: node.attributes.meta as Record<string, unknown> | undefined,
+        language: (node.attributes.lang ||
+          node.attributes.language ||
+          node.attributes["data-language"]) as string | undefined,
         children: node.children,
       })
 
-    case "Accordion":
-      return generators.generateAccordion({ node })
+    // case "Accordion":
+    //   return generators.generateAccordion({ node })
 
-    case "AccordionItem":
-      return generators.generateAccordionItem({ node })
+    // case "AccordionItem":
+    //   return generators.generateAccordionItem({ node })
+
+    // case "Callout":
+    //   return generators.generateCallout({ node })
+
+    case "Tabs":
+      return generators.generateTabs({ node })
+
+    case "Tab":
+      return generators.generateTab({ node })
   }
-
-  return {}
 }

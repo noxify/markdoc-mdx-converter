@@ -1,32 +1,41 @@
-import type { RenderableTreeNode } from "@markdoc/markdoc"
+import type { Tag } from "@markdoc/markdoc"
+import type { Heading, PhrasingContent } from "mdast"
+import { createRegExp, digit, oneOrMore } from "magic-regexp"
 
+import type { TagReplacer } from "../parser"
 import { isTag } from "../helpers"
-import { parseTag } from "../parse-tag"
+import { parseTagElement } from "../parser"
 
-export function generateHeading({
-  level,
-  children,
-}: {
-  level: number
-  children: RenderableTreeNode[]
-}) {
+export function generateHeading(node: Tag, tagReplacer: TagReplacer): Heading {
+  const pattern = createRegExp(oneOrMore(digit).as("depthLevel"))
+  const parsedName = node.name.match(pattern)
+
+  const depth = parseInt(parsedName?.groups.depthLevel ?? "2") as Heading["depth"]
+
   return {
     type: "heading",
-    depth: level,
-    children: children.map((ele, index, arr) => {
+    depth,
+    children: node.children.map((ele, index, arr) => {
       if (!isTag(ele)) {
         // not sure if this is required
         // but since we could have annotations in markdoc ( e.g. `{% #custom-heading-id %}` )
         // we have an additional space at the end, which would result in
         // `## Heading 2&#x20;` instead of `## Heading`
         if (index === arr.length - 1) {
-          // eslint-disable-next-line @typescript-eslint/no-base-to-string
-          return { type: "text", value: ele?.toString().trimEnd() }
+          return {
+            type: "text",
+            value: (ele as string).trimEnd(),
+          }
         }
-        return { type: "text", value: ele }
+        return {
+          type: "text",
+          value: ele as string,
+        }
       }
 
-      return parseTag(ele)
-    }),
+      // since we could also have non-plain text in a heading ( e.g. some inline code )
+      // we have to parse them, to get it rendered correctly
+      return parseTagElement(ele, tagReplacer)
+    }) as PhrasingContent[],
   }
 }
