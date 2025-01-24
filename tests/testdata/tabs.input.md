@@ -3,8 +3,6 @@ title: Test document title
 description: Some description
 ---
 
-Non anim velit laborum eiusmod culpa dolor sit anim excepteur in cillum.
-
 ## Tabs
 
 {% tabs %}
@@ -15,6 +13,11 @@ preview content
 
 {% tab label="Code" default=true %}
 code content
+
+```js
+// js codeblock
+```
+
 {% /tab %}
 
 {% /tabs %}

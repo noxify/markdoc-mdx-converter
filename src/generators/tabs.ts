@@ -1,11 +1,12 @@
 import type { Tag } from "@markdoc/markdoc"
+import type { RootContent } from "mdast"
 import type { MdxJsxFlowElement } from "mdast-util-mdx"
 
 import type { TagReplacer } from "../parser"
 import { generateAttributes, isTag } from "../helpers"
 import { parseTagElement } from "../parser"
 
-export function generateTabs(node: Tag, tagReplacer: TagReplacer): MdxJsxFlowElement {
+export function generateTabs(node: Tag, tagReplacer: TagReplacer): RootContent {
   const tabElements: MdxJsxFlowElement[] = node.children
     .map((ele) => {
       if (!isTag(ele)) {
@@ -20,7 +21,7 @@ export function generateTabs(node: Tag, tagReplacer: TagReplacer): MdxJsxFlowEle
     .find((tabElement) =>
       tabElement.attributes.find((ele) => ele.type === "mdxJsxAttribute" && ele.name === "default"),
     )
-    ?.attributes.find((ele) => ele.type === "mdxJsxAttribute" && ele.name === "label")?.value as
+    ?.attributes.find((ele) => ele.type === "mdxJsxAttribute" && ele.name === "value")?.value as
     | string
     | undefined
 
@@ -28,7 +29,7 @@ export function generateTabs(node: Tag, tagReplacer: TagReplacer): MdxJsxFlowEle
     .filter((ele) => ele.name === "TabsContent")
     .flatMap(
       (ele) =>
-        ele.attributes.find((ele) => ele.type === "mdxJsxAttribute" && ele.name === "label")?.value,
+        ele.attributes.find((ele) => ele.type === "mdxJsxAttribute" && ele.name === "value")?.value,
     )
     .filter((ele) => !!ele) as string[]
 
@@ -54,10 +55,15 @@ export function generateTabs(node: Tag, tagReplacer: TagReplacer): MdxJsxFlowEle
     ],
   } as MdxJsxFlowElement
 
-  return {
+  const res = {
     type: "mdxJsxFlowElement",
     name: "Tabs",
-    attributes: generateAttributes({ ...node.attributes, ...(defaultTab ? { defaultTab } : {}) }),
+    attributes: generateAttributes({
+      ...node.attributes,
+      ...(defaultTab ? { defaultValue: defaultTab } : {}),
+    }),
     children: [tabsList, ...tabElements],
-  }
+  } as MdxJsxFlowElement
+
+  return res
 }

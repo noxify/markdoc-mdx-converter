@@ -1,14 +1,25 @@
 import type { Tag } from "@markdoc/markdoc"
+import type { BlockContent, DefinitionContent } from "mdast"
+import type { MdxJsxFlowElement } from "mdast-util-mdx"
 
 import type { TagReplacer } from "../parser"
 import { generateAttributes, isTag } from "../helpers"
 import { parseTagElement } from "../parser"
 
-export function generateTab(node: Tag, tagReplacer: TagReplacer) {
+export function generateTab(node: Tag, tagReplacer: TagReplacer): MdxJsxFlowElement {
   return {
     type: "mdxJsxFlowElement",
     name: "TabsContent",
-    attributes: generateAttributes(node.attributes),
+    attributes: generateAttributes(node.attributes).map((ele) => {
+      if (ele.name === "label") {
+        return {
+          ...ele,
+          name: "value",
+        }
+      }
+
+      return ele
+    }),
     children: node.children
       .map((ele) => {
         if (!isTag(ele)) {
@@ -20,6 +31,6 @@ export function generateTab(node: Tag, tagReplacer: TagReplacer) {
 
         return parseTagElement(ele, tagReplacer)
       })
-      .filter((ele) => !!ele),
+      .filter((ele) => !!ele) as (BlockContent | DefinitionContent)[],
   }
 }

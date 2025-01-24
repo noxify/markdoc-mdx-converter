@@ -1,16 +1,13 @@
-import type { RenderableTreeNode } from "@markdoc/markdoc"
+import type { Tag } from "@markdoc/markdoc"
 import type { Code } from "mdast"
 
-export function generateCodeblock({
-  language,
-  children,
-}: {
-  language?: string
-  children: RenderableTreeNode[]
-}): Code {
+export function generateCodeblock(node: Tag): Code {
+  const lang = (node.attributes.lang ||
+    node.attributes.language ||
+    node.attributes["data-language"]) as string | undefined
   return {
     type: "code",
-    lang: language ?? null,
-    value: (children[0] ?? "") as string,
+    lang,
+    value: (node.children[0] ?? "") as string,
   }
 }

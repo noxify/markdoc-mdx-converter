@@ -1,16 +1,21 @@
 import type { Tag } from "@markdoc/markdoc"
-import type { RootContent } from "mdast"
+import type { Paragraph, PhrasingContent } from "mdast"
 
-export function generateParagraph(node: Tag): RootContent {
-  const paragraphDefinition: RootContent = {
+import type { TagReplacer } from "../parser"
+import { isTag } from "../helpers"
+import { parseTagElement } from "../parser"
+
+export function generateParagraph(node: Tag, tagReplacer: TagReplacer): Paragraph {
+  return {
     type: "paragraph",
-    children: [
-      {
-        type: "text",
-        value: node.children[0] as string,
-      },
-    ],
-  }
+    children: node.children
+      .map((ele) => {
+        if (!isTag(ele)) {
+          return { type: "text", value: ele as string }
+        }
 
-  return paragraphDefinition
+        return parseTagElement(ele, tagReplacer)
+      })
+      .filter((ele) => !!ele) as PhrasingContent[],
+  }
 }

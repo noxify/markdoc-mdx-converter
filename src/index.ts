@@ -1,15 +1,17 @@
-import { inspect } from "util"
-import type { Config, Tag } from "@markdoc/markdoc"
+import type { Config } from "@markdoc/markdoc"
 import type { Root, RootContent } from "mdast"
 import Markdoc from "@markdoc/markdoc"
 import { fromMarkdown } from "mdast-util-from-markdown"
 import { frontmatterFromMarkdown, frontmatterToMarkdown } from "mdast-util-frontmatter"
-import { mdxFromMarkdown } from "mdast-util-mdx"
+import { mdxFromMarkdown, mdxToMarkdown } from "mdast-util-mdx"
 import { toMarkdown } from "mdast-util-to-markdown"
 import { frontmatter } from "micromark-extension-frontmatter"
 import { mdxjs } from "micromark-extension-mdxjs"
 
 import {
+  generateAccordion,
+  generateAccordionItem,
+  generateCallout,
   generateCodeblock,
   generateHeading,
   generateInlineCode,
@@ -53,6 +55,9 @@ export function transformDocument({
     h4: generateHeading,
     h5: generateHeading,
     h6: generateHeading,
+    Accordion: generateAccordion,
+    AccordionItem: generateAccordionItem,
+    Callout: generateCallout,
     code: generateInlineCode,
     pre: generateCodeblock,
     Tab: generateTab,
@@ -67,7 +72,10 @@ export function transformDocument({
   const root = { type: "root", children: parsed } as Root
 
   return {
-    parsed,
-    rendered: parsed ? toMarkdown(root, { extensions: [frontmatterToMarkdown(["yaml"])] }) : null,
+    parsed: root,
+
+    rendered: parsed
+      ? toMarkdown(root, { extensions: [frontmatterToMarkdown(["yaml"]), mdxToMarkdown()] })
+      : null,
   }
 }

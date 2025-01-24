@@ -1,20 +1,25 @@
 import type { Tag } from "@markdoc/markdoc"
+import type { BlockContent, DefinitionContent } from "mdast"
 import type { MdxJsxFlowElement } from "mdast-util-mdx"
 
+import type { TagReplacer } from "../parser"
 import { generateAttributes, isTag } from "../helpers"
-import { parseAsTextElement, parseTag } from "../parse-tag"
+import { parseTagElement } from "../parser"
 
-export function generateAccordionItem({ node }: { node: Tag }): MdxJsxFlowElement {
+export function generateAccordionItem(node: Tag, tagReplacer: TagReplacer): MdxJsxFlowElement {
   return {
     type: "mdxJsxFlowElement",
     name: "AccordionItem",
     attributes: generateAttributes(node.attributes),
     children: node.children.map((ele) => {
       if (!isTag(ele)) {
-        return parseAsTextElement(ele)
+        return {
+          type: "text",
+          value: (ele as string).trimEnd(),
+        }
       }
 
-      return parseTag(ele)
-    }),
+      return parseTagElement(ele, tagReplacer)
+    }) as (BlockContent | DefinitionContent)[],
   }
 }

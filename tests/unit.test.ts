@@ -1,12 +1,11 @@
 import { readFile, writeFile } from "fs/promises"
 import path from "path"
 import { cwd } from "process"
-import { inspect } from "util"
 import type { Config } from "@markdoc/markdoc"
-import Markdoc, { Tag } from "@markdoc/markdoc"
 import { describe, test } from "vitest"
 
 import { mdxToAST, transformDocument } from "../src"
+import { removePosition } from "../src/remove-position"
 
 const config: Config = {
   nodes: {},
@@ -63,19 +62,19 @@ const tests = [
   },
   {
     name: "accordion-simple",
-    skip: true,
+    skip: false,
   },
   {
     name: "accordion-multiple",
-    skip: true,
+    skip: false,
   },
   {
     name: "callout-with-title",
-    skip: true,
+    skip: false,
   },
   {
     name: "callout-without-title",
-    skip: true,
+    skip: false,
   },
   {
     name: "mermaid",
@@ -104,7 +103,7 @@ const tests = [
   },
 ]
 
-describe.each(tests.filter((test) => !test.skip))("$name", ({ name, skip }) => {
+describe.each(tests.filter((test) => !test.skip))("$name", ({ name }) => {
   test(`${name}`, async () => {
     const input = await readFile(path.join(cwd(), `tests/testdata/${name}.input.md`), {
       encoding: "utf-8",
@@ -114,7 +113,20 @@ describe.each(tests.filter((test) => !test.skip))("$name", ({ name, skip }) => {
       encoding: "utf-8",
     })
 
+    const outputAst = mdxToAST(output)
+
+    removePosition(outputAst, new Set(["position"]))
+
+    await writeFile(
+      path.join(cwd(), `tests/generated_data/${name}.output-ast.json`),
+      JSON.stringify(outputAst, null, 2),
+    )
     const generated = transformDocument({ document: input, config })
+
+    await writeFile(
+      path.join(cwd(), `tests/generated_data/${name}.generated-ast.json`),
+      JSON.stringify(generated.parsed, null, 2),
+    )
 
     await writeFile(
       path.join(cwd(), `tests/generated_data/${name}.generated.mdx`),
