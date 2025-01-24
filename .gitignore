@@ -34,3 +34,5 @@ yarn-error.log*
 
 tests/generated_data/*
 !tests/generated_data/.gitkeep
+
+.cache
