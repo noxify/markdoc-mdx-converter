@@ -11,11 +11,15 @@
   },
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "build": "pkgroll --clean-dist",
     "ci:publish": "pnpm build && pnpm publish -r --access public --publish-branch main && pnpm changeset tag",
     "ci:version": "pnpm changeset version && pnpm install --no-frozen-lockfile && git add .",
     "clean": "git clean -xdf .cache node_modules",
+    "cs": "changeset",
     "deps:update": "pnpm update -i -r -L",
     "dev": "pkgroll --watch",
     "format": "prettier --check . --ignore-path ./.gitignore --ignore-path ./.prettierignore",
