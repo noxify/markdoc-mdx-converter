@@ -1,9 +1,6 @@
----
-title: Test document title
-description: Some description
----
+### Complex Table
 
-## Complex table w/o colspan
+## table w/o colspan
 
 {% table %}
 
@@ -31,7 +28,7 @@ description: Some description
 
 {% /table %}
 
-## Complex table w/ colspan
+## table w/ colspan
 
 {% table %}
 
@@ -58,7 +55,7 @@ description: Some description
 
 {% /table %}
 
-## Complex table w/ rich content ( maybe out of scope? )
+## table w/ rich content ( maybe out of scope? )
 
 {% table %}
 

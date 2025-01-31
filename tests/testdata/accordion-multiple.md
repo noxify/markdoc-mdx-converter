@@ -1,9 +1,6 @@
----
-title: Test document title
-description: Some description
----
+## Accordion multiple
 
-{% accordion %}
+{% accordion type="multiple" %}
 
 {% accordionitem title="Basic" %}
 basic content

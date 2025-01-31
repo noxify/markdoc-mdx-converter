@@ -1,7 +1,4 @@
----
-title: Test document title
-description: Some description
----
+## Railroad
 
 ```railroad
 Diagram(

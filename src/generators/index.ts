@@ -1,9 +1,25 @@
-export { generateHeading } from "./heading"
-export { generateParagraph } from "./paragraph"
-export { generateInlineCode } from "./inline-code"
-export { generateCodeblock } from "./codeblock"
-export { generateAccordion } from "./accordion"
-export { generateAccordionItem } from "./accordion-item"
-export { generateCallout } from "./callout"
-export { generateTabs } from "./tabs"
-export { generateTab } from "./tab"
+export * from "./codeblock"
+export * from "./inline-code"
+
+export * from "./ol"
+export * from "./ul"
+export * from "./li"
+
+export * from "./heading"
+export * from "./paragraph"
+export * from "./blockquote"
+
+export * from "./tabs"
+export * from "./tab"
+
+export * from "./table"
+export * from "./thead"
+export * from "./tbody"
+export * from "./tr"
+export * from "./th"
+export * from "./td"
+
+export * from "./accordion"
+export * from "./accordion-item"
+
+export * from "./callout"

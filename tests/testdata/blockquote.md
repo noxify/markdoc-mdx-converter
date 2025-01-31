@@ -1,8 +1,3 @@
----
-title: Test document title
-description: Some description
----
-
 ## Blockquote
 
 > Non laborum dolor dolore culpa nisi ea quis aute.

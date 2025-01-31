@@ -1,13 +1,8 @@
----
-title: Test document title
-description: Some description
----
-
 # Heading 1
 
 Eiusmod aliquip mollit incididunt est amet proident eu Lorem non laboris duis ex commodo.
 
-## Heading 2
+## Heading 2 {% #custom-id %}
 
 Eiusmod aliquip mollit incididunt est amet proident eu Lorem non laboris duis ex commodo.
 

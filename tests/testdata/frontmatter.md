@@ -1,9 +1,8 @@
 ---
 title: Test document title
 description: Some description
+nested:
+  prop: value
 ---
 
-```mermaid
-graph TB
-a-->b
-```
+Laboris commodo quis proident culpa.

@@ -1,9 +1,6 @@
----
-title: Test document title
-description: Some description
----
+## Simple Table
 
-## Simple markdown table
+## markdown table
 
 | Item              | In Stock | Price |
 | :---------------- | :------: | ----: |

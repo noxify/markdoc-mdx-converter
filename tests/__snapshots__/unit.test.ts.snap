@@ -1,0 +1,2359 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`'accordion-multiple' > accordion-multiple 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Accordion multiple",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "attributes": [
+        {
+          "name": "type",
+          "type": "mdxJsxAttribute",
+          "value": "multiple",
+        },
+      ],
+      "children": [
+        {
+          "attributes": [
+            {
+              "name": "title",
+              "type": "mdxJsxAttribute",
+              "value": "Basic",
+            },
+          ],
+          "children": [
+            {
+              "children": [
+                {
+                  "type": "text",
+                  "value": "basic content",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "name": "AccordionItem",
+          "type": "mdxJsxFlowElement",
+        },
+        {
+          "attributes": [
+            {
+              "name": "title",
+              "type": "mdxJsxAttribute",
+              "value": "Advanced",
+            },
+          ],
+          "children": [
+            {
+              "children": [
+                {
+                  "type": "text",
+                  "value": "advanced content",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "name": "AccordionItem",
+          "type": "mdxJsxFlowElement",
+        },
+      ],
+      "name": "Accordion",
+      "type": "mdxJsxFlowElement",
+    },
+  ],
+  "type": "root",
+}
+`;
+
+exports[`'accordion-simple' > accordion-simple 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Accordion simple",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "attributes": [],
+      "children": [
+        {
+          "attributes": [
+            {
+              "name": "title",
+              "type": "mdxJsxAttribute",
+              "value": "Basic",
+            },
+          ],
+          "children": [
+            {
+              "children": [
+                {
+                  "type": "text",
+                  "value": "basic content",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "name": "AccordionItem",
+          "type": "mdxJsxFlowElement",
+        },
+        {
+          "attributes": [
+            {
+              "name": "title",
+              "type": "mdxJsxAttribute",
+              "value": "Advanced",
+            },
+          ],
+          "children": [
+            {
+              "children": [
+                {
+                  "type": "text",
+                  "value": "advanced content",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "name": "AccordionItem",
+          "type": "mdxJsxFlowElement",
+        },
+      ],
+      "name": "Accordion",
+      "type": "mdxJsxFlowElement",
+    },
+  ],
+  "type": "root",
+}
+`;
+
+exports[`'blockquote' > blockquote 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Blockquote",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Non laborum dolor dolore culpa nisi ea quis aute.",
+            },
+            {
+              "type": "text",
+              "value": " ",
+            },
+            {
+              "type": "text",
+              "value": "Sit irure commodo velit fugiat veniam velit.",
+            },
+            {
+              "type": "text",
+              "value": " ",
+            },
+            {
+              "type": "text",
+              "value": "Mollit velit non fugiat elit est nulla quis aute non cupidatat ut.",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "type": "blockquote",
+    },
+  ],
+  "type": "root",
+}
+`;
+
+exports[`'callout-with-title' > callout-with-title 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Callout w/ title",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Testing a warning callout",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "attributes": [
+        {
+          "name": "title",
+          "type": "mdxJsxAttribute",
+          "value": "Warning title",
+        },
+        {
+          "name": "type",
+          "type": "mdxJsxAttribute",
+          "value": "warning",
+        },
+      ],
+      "children": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Warning content",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "name": "Callout",
+      "type": "mdxJsxFlowElement",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Testing an info callout",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "attributes": [
+        {
+          "name": "title",
+          "type": "mdxJsxAttribute",
+          "value": "Info title",
+        },
+        {
+          "name": "type",
+          "type": "mdxJsxAttribute",
+          "value": "info",
+        },
+      ],
+      "children": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Info content",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "name": "Callout",
+      "type": "mdxJsxFlowElement",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Testing a success callout",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "attributes": [
+        {
+          "name": "title",
+          "type": "mdxJsxAttribute",
+          "value": "Success title",
+        },
+        {
+          "name": "type",
+          "type": "mdxJsxAttribute",
+          "value": "success",
+        },
+      ],
+      "children": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Success content",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "name": "Callout",
+      "type": "mdxJsxFlowElement",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Testing a note callout",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "attributes": [
+        {
+          "name": "title",
+          "type": "mdxJsxAttribute",
+          "value": "Note title",
+        },
+        {
+          "name": "type",
+          "type": "mdxJsxAttribute",
+          "value": "note",
+        },
+      ],
+      "children": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Note content",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "name": "Callout",
+      "type": "mdxJsxFlowElement",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Testing an error callout",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "attributes": [
+        {
+          "name": "title",
+          "type": "mdxJsxAttribute",
+          "value": "Error title",
+        },
+        {
+          "name": "type",
+          "type": "mdxJsxAttribute",
+          "value": "error",
+        },
+      ],
+      "children": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Error content",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "name": "Callout",
+      "type": "mdxJsxFlowElement",
+    },
+  ],
+  "type": "root",
+}
+`;
+
+exports[`'callout-without-title' > callout-without-title 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Callout w/o title",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Testing a warning callout",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "attributes": [
+        {
+          "name": "type",
+          "type": "mdxJsxAttribute",
+          "value": "warning",
+        },
+      ],
+      "children": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Warning content",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "name": "Callout",
+      "type": "mdxJsxFlowElement",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Testing an info callout",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "attributes": [
+        {
+          "name": "type",
+          "type": "mdxJsxAttribute",
+          "value": "info",
+        },
+      ],
+      "children": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Info content",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "name": "Callout",
+      "type": "mdxJsxFlowElement",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Testing a success callout",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "attributes": [
+        {
+          "name": "type",
+          "type": "mdxJsxAttribute",
+          "value": "success",
+        },
+      ],
+      "children": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Success content",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "name": "Callout",
+      "type": "mdxJsxFlowElement",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Testing a note callout",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "attributes": [
+        {
+          "name": "type",
+          "type": "mdxJsxAttribute",
+          "value": "note",
+        },
+      ],
+      "children": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Note content",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "name": "Callout",
+      "type": "mdxJsxFlowElement",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Testing an error callout",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "attributes": [
+        {
+          "name": "type",
+          "type": "mdxJsxAttribute",
+          "value": "error",
+        },
+      ],
+      "children": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Error content",
+            },
+          ],
+          "type": "paragraph",
+        },
+      ],
+      "name": "Callout",
+      "type": "mdxJsxFlowElement",
+    },
+  ],
+  "type": "root",
+}
+`;
+
+exports[`'codeblock' > codeblock 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Codeblock",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Plain codeblock",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "lang": undefined,
+      "type": "code",
+      "value": "//plain
+",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "TS codeblock",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "lang": "ts",
+      "type": "code",
+      "value": "//typescript
+",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Meta? codeblock",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "lang": "ts",
+      "type": "code",
+      "value": "//typescript
+",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "inline",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Test ",
+        },
+        {
+          "type": "inlineCode",
+          "value": "hello",
+        },
+        {
+          "type": "text",
+          "value": " world",
+        },
+      ],
+      "type": "paragraph",
+    },
+    {
+      "children": [
+        {
+          "type": "inlineCode",
+          "value": "standalone",
+        },
+      ],
+      "type": "paragraph",
+    },
+  ],
+  "type": "root",
+}
+`;
+
+exports[`'headings' > headings 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Heading 1",
+        },
+      ],
+      "depth": 1,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Eiusmod aliquip mollit incididunt est amet proident eu Lorem non laboris duis ex commodo.",
+        },
+      ],
+      "type": "paragraph",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Heading 2",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Eiusmod aliquip mollit incididunt est amet proident eu Lorem non laboris duis ex commodo.",
+        },
+      ],
+      "type": "paragraph",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Heading 3",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Eiusmod aliquip mollit incididunt est amet proident eu Lorem non laboris duis ex commodo.",
+        },
+      ],
+      "type": "paragraph",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Heading 4",
+        },
+      ],
+      "depth": 4,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Eiusmod aliquip mollit incididunt est amet proident eu Lorem non laboris duis ex commodo.",
+        },
+      ],
+      "type": "paragraph",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Heaing 5",
+        },
+      ],
+      "depth": 5,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Eiusmod aliquip mollit incididunt est amet proident eu Lorem non laboris duis ex commodo.",
+        },
+      ],
+      "type": "paragraph",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Heaing 6 with ",
+        },
+        {
+          "type": "inlineCode",
+          "value": "inline code",
+        },
+        {
+          "type": "text",
+          "value": " code",
+        },
+      ],
+      "depth": 6,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Eiusmod aliquip mollit incididunt est amet proident eu Lorem non laboris duis ex commodo.",
+        },
+      ],
+      "type": "paragraph",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Test ",
+        },
+        {
+          "type": "inlineCode",
+          "value": "inline",
+        },
+        {
+          "type": "text",
+          "value": " code",
+        },
+      ],
+      "type": "paragraph",
+    },
+    {
+      "lang": undefined,
+      "type": "code",
+      "value": "// codeblock
+// multiline
+",
+    },
+  ],
+  "type": "root",
+}
+`;
+
+exports[`'list' > list 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "List",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "unordered list",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "element 1",
+            },
+          ],
+          "spread": false,
+          "type": "listItem",
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "element 2",
+            },
+          ],
+          "spread": false,
+          "type": "listItem",
+        },
+      ],
+      "ordered": false,
+      "spread": false,
+      "type": "list",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "nested unordered list",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "element 1",
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "sub element 1",
+                    },
+                  ],
+                  "spread": false,
+                  "type": "listItem",
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "sub element 2",
+                    },
+                  ],
+                  "spread": false,
+                  "type": "listItem",
+                },
+              ],
+              "ordered": false,
+              "spread": false,
+              "type": "list",
+            },
+          ],
+          "spread": false,
+          "type": "listItem",
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "element 2",
+            },
+          ],
+          "spread": false,
+          "type": "listItem",
+        },
+      ],
+      "ordered": false,
+      "spread": false,
+      "type": "list",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "ordered list",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "element 1",
+            },
+          ],
+          "spread": false,
+          "type": "listItem",
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "element 2",
+            },
+          ],
+          "spread": false,
+          "type": "listItem",
+        },
+      ],
+      "ordered": true,
+      "spread": false,
+      "start": 1,
+      "type": "list",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "nested ordered list",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "element 1",
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "sub element 1",
+                    },
+                  ],
+                  "spread": false,
+                  "type": "listItem",
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "sub element 2",
+                    },
+                  ],
+                  "spread": false,
+                  "type": "listItem",
+                },
+              ],
+              "ordered": true,
+              "spread": false,
+              "start": 1,
+              "type": "list",
+            },
+          ],
+          "spread": false,
+          "type": "listItem",
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "element 2",
+            },
+          ],
+          "spread": false,
+          "type": "listItem",
+        },
+      ],
+      "ordered": true,
+      "spread": false,
+      "start": 1,
+      "type": "list",
+    },
+  ],
+  "type": "root",
+}
+`;
+
+exports[`'mermaid' > mermaid 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Mermaid",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "lang": "mermaid",
+      "type": "code",
+      "value": "graph TB
+a-->b
+",
+    },
+  ],
+  "type": "root",
+}
+`;
+
+exports[`'railroad' > railroad 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Railroad",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "lang": "railroad",
+      "type": "code",
+      "value": "Diagram(
+  Optional('+', 'skip'),
+  Choice(0,
+    NonTerminal('name-start char'),
+    NonTerminal('escape')
+  ),
+  ZeroOrMore(
+    Choice(0,
+      NonTerminal('name char'),
+      NonTerminal('escape')
+    )
+  )
+)
+",
+    },
+  ],
+  "type": "root",
+}
+`;
+
+exports[`'table-complex' > table-complex 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Complex Table",
+        },
+      ],
+      "depth": 3,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "table w/o colspan",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "attributes": [],
+      "children": [
+        {
+          "attributes": [],
+          "children": [
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Item",
+                    },
+                  ],
+                  "name": "TableHead",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "In Stock",
+                    },
+                  ],
+                  "name": "TableHead",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Price",
+                    },
+                  ],
+                  "name": "TableHead",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+          ],
+          "name": "TableHeader",
+          "type": "mdxJsxFlowElement",
+        },
+        {
+          "attributes": [],
+          "children": [
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Python Hat",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "True",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "23.99",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "SQL Hat",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "True",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "13.99",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Codecademy Hat",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "True",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "9.99",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+          ],
+          "name": "TableBody",
+          "type": "mdxJsxFlowElement",
+        },
+      ],
+      "name": "Table",
+      "type": "mdxJsxFlowElement",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "table w/ colspan",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "attributes": [],
+      "children": [
+        {
+          "attributes": [],
+          "children": [
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Item",
+                    },
+                  ],
+                  "name": "TableHead",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "In Stock",
+                    },
+                  ],
+                  "name": "TableHead",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Price",
+                    },
+                  ],
+                  "name": "TableHead",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+          ],
+          "name": "TableHeader",
+          "type": "mdxJsxFlowElement",
+        },
+        {
+          "attributes": [],
+          "children": [
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Python Hat",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "True",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "23.99",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "SQL Hat",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "True",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "13.99",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Codecademy Hat",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "colSpan",
+                      "type": "mdxJsxAttribute",
+                      "value": {
+                        "value": 2,
+                      },
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Not in stock ",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+          ],
+          "name": "TableBody",
+          "type": "mdxJsxFlowElement",
+        },
+      ],
+      "name": "Table",
+      "type": "mdxJsxFlowElement",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "table w/ rich content ( maybe out of scope? )",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "attributes": [],
+      "children": [
+        {
+          "attributes": [],
+          "children": [
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Item",
+                    },
+                  ],
+                  "name": "TableHead",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "In Stock",
+                    },
+                  ],
+                  "name": "TableHead",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Price",
+                    },
+                  ],
+                  "name": "TableHead",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+          ],
+          "name": "TableHeader",
+          "type": "mdxJsxFlowElement",
+        },
+        {
+          "attributes": [],
+          "children": [
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Python Hat",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": "list element 1",
+                            },
+                            {
+                              "children": [
+                                {
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "value": "list element 3",
+                                    },
+                                  ],
+                                  "spread": false,
+                                  "type": "listItem",
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "type": "text",
+                                      "value": "list element 4",
+                                    },
+                                  ],
+                                  "spread": false,
+                                  "type": "listItem",
+                                },
+                              ],
+                              "ordered": true,
+                              "spread": false,
+                              "start": 1,
+                              "type": "list",
+                            },
+                          ],
+                          "spread": false,
+                          "type": "listItem",
+                        },
+                        {
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": "list element 2",
+                            },
+                          ],
+                          "spread": false,
+                          "type": "listItem",
+                        },
+                      ],
+                      "ordered": false,
+                      "spread": false,
+                      "type": "list",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "23.99",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "SQL Hat",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "True",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "13.99",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Codecademy Hat",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "True",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "9.99",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+          ],
+          "name": "TableBody",
+          "type": "mdxJsxFlowElement",
+        },
+      ],
+      "name": "Table",
+      "type": "mdxJsxFlowElement",
+    },
+  ],
+  "type": "root",
+}
+`;
+
+exports[`'table-simple' > table-simple 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Simple Table",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "markdown table",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "attributes": [],
+      "children": [
+        {
+          "attributes": [],
+          "children": [
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [
+                    {
+                      "name": "align",
+                      "type": "mdxJsxAttribute",
+                      "value": "left",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Item",
+                    },
+                  ],
+                  "name": "TableHead",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "align",
+                      "type": "mdxJsxAttribute",
+                      "value": "center",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "In Stock",
+                    },
+                  ],
+                  "name": "TableHead",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "align",
+                      "type": "mdxJsxAttribute",
+                      "value": "right",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Price",
+                    },
+                  ],
+                  "name": "TableHead",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+          ],
+          "name": "TableHeader",
+          "type": "mdxJsxFlowElement",
+        },
+        {
+          "attributes": [],
+          "children": [
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [
+                    {
+                      "name": "align",
+                      "type": "mdxJsxAttribute",
+                      "value": "left",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Python Hat",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "align",
+                      "type": "mdxJsxAttribute",
+                      "value": "center",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "True",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "align",
+                      "type": "mdxJsxAttribute",
+                      "value": "right",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "23.99",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [
+                    {
+                      "name": "align",
+                      "type": "mdxJsxAttribute",
+                      "value": "left",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "SQL Hat",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "align",
+                      "type": "mdxJsxAttribute",
+                      "value": "center",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "True",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "align",
+                      "type": "mdxJsxAttribute",
+                      "value": "right",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "23.99",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [
+                    {
+                      "name": "align",
+                      "type": "mdxJsxAttribute",
+                      "value": "left",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Codecademy Tee",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "align",
+                      "type": "mdxJsxAttribute",
+                      "value": "center",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "False",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "align",
+                      "type": "mdxJsxAttribute",
+                      "value": "right",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "19.99",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+            {
+              "attributes": [],
+              "children": [
+                {
+                  "attributes": [
+                    {
+                      "name": "align",
+                      "type": "mdxJsxAttribute",
+                      "value": "left",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Codecademy Hoodie",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "align",
+                      "type": "mdxJsxAttribute",
+                      "value": "center",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "False",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "align",
+                      "type": "mdxJsxAttribute",
+                      "value": "right",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "42.99",
+                    },
+                  ],
+                  "name": "TableCell",
+                  "type": "mdxJsxFlowElement",
+                },
+              ],
+              "name": "TableRow",
+              "type": "mdxJsxFlowElement",
+            },
+          ],
+          "name": "TableBody",
+          "type": "mdxJsxFlowElement",
+        },
+      ],
+      "name": "Table",
+      "type": "mdxJsxFlowElement",
+    },
+  ],
+  "type": "root",
+}
+`;
+
+exports[`'tabs' > tabs 1`] = `
+{
+  "children": [
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "Tabs",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "w/ custom default",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "attributes": [
+        {
+          "name": "defaultValue",
+          "type": "mdxJsxAttribute",
+          "value": "Code",
+        },
+      ],
+      "children": [
+        {
+          "attributes": [],
+          "children": [
+            {
+              "children": [
+                {
+                  "attributes": [
+                    {
+                      "name": "value",
+                      "type": "mdxJsxAttribute",
+                      "value": "Preview",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Preview",
+                    },
+                  ],
+                  "name": "TabsTrigger",
+                  "type": "mdxJsxTextElement",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "value",
+                      "type": "mdxJsxAttribute",
+                      "value": "Code",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Code",
+                    },
+                  ],
+                  "name": "TabsTrigger",
+                  "type": "mdxJsxTextElement",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "name": "TabsList",
+          "type": "mdxJsxFlowElement",
+        },
+        {
+          "attributes": [
+            {
+              "name": "value",
+              "type": "mdxJsxAttribute",
+              "value": "Preview",
+            },
+          ],
+          "children": [
+            {
+              "children": [
+                {
+                  "type": "text",
+                  "value": "preview content",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "name": "TabsContent",
+          "type": "mdxJsxFlowElement",
+        },
+        {
+          "attributes": [
+            {
+              "name": "value",
+              "type": "mdxJsxAttribute",
+              "value": "Code",
+            },
+            {
+              "name": "default",
+              "type": "mdxJsxAttribute",
+              "value": {
+                "value": true,
+              },
+            },
+          ],
+          "children": [
+            {
+              "children": [
+                {
+                  "type": "text",
+                  "value": "code content",
+                },
+              ],
+              "type": "paragraph",
+            },
+            {
+              "lang": "js",
+              "type": "code",
+              "value": "// js codeblock
+",
+            },
+          ],
+          "name": "TabsContent",
+          "type": "mdxJsxFlowElement",
+        },
+      ],
+      "name": "Tabs",
+      "type": "mdxJsxFlowElement",
+    },
+    {
+      "children": [
+        {
+          "type": "text",
+          "value": "w/o custom default",
+        },
+      ],
+      "depth": 2,
+      "type": "heading",
+    },
+    {
+      "attributes": [],
+      "children": [
+        {
+          "attributes": [],
+          "children": [
+            {
+              "children": [
+                {
+                  "attributes": [
+                    {
+                      "name": "value",
+                      "type": "mdxJsxAttribute",
+                      "value": "Preview",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Preview",
+                    },
+                  ],
+                  "name": "TabsTrigger",
+                  "type": "mdxJsxTextElement",
+                },
+                {
+                  "type": "text",
+                  "value": "
+",
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "value",
+                      "type": "mdxJsxAttribute",
+                      "value": "Code",
+                    },
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Code",
+                    },
+                  ],
+                  "name": "TabsTrigger",
+                  "type": "mdxJsxTextElement",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "name": "TabsList",
+          "type": "mdxJsxFlowElement",
+        },
+        {
+          "attributes": [
+            {
+              "name": "value",
+              "type": "mdxJsxAttribute",
+              "value": "Preview",
+            },
+          ],
+          "children": [
+            {
+              "children": [
+                {
+                  "type": "text",
+                  "value": "preview content",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "name": "TabsContent",
+          "type": "mdxJsxFlowElement",
+        },
+        {
+          "attributes": [
+            {
+              "name": "value",
+              "type": "mdxJsxAttribute",
+              "value": "Code",
+            },
+          ],
+          "children": [
+            {
+              "children": [
+                {
+                  "type": "text",
+                  "value": "code content",
+                },
+              ],
+              "type": "paragraph",
+            },
+            {
+              "lang": "js",
+              "type": "code",
+              "value": "// js codeblock
+",
+            },
+          ],
+          "name": "TabsContent",
+          "type": "mdxJsxFlowElement",
+        },
+      ],
+      "name": "Tabs",
+      "type": "mdxJsxFlowElement",
+    },
+  ],
+  "type": "root",
+}
+`;

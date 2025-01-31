@@ -2,10 +2,9 @@ import { readFile, writeFile } from "fs/promises"
 import path from "path"
 import { cwd } from "process"
 import type { Config } from "@markdoc/markdoc"
-import { describe, test } from "vitest"
+import { describe, expect, test } from "vitest"
 
-import { mdxToAST, transformDocument } from "../src"
-import { removePosition } from "../src/remove-position"
+import { convertContent } from "../src"
 
 const config: Config = {
   nodes: {},
@@ -56,77 +55,65 @@ const config: Config = {
 const tests = [
   {
     name: "headings",
-    skip: false,
+    debug: false,
   },
   {
     name: "accordion-simple",
-    skip: false,
+    debug: false,
   },
   {
     name: "accordion-multiple",
-    skip: false,
+    debug: false,
   },
   {
     name: "callout-with-title",
-    skip: false,
+    debug: false,
   },
   {
     name: "callout-without-title",
-    skip: false,
+    debug: false,
   },
   {
     name: "mermaid",
-    skip: false,
+    debug: false,
   },
   {
     name: "railroad",
-    skip: false,
+    debug: false,
   },
   {
     name: "table-simple",
-    skip: false,
+    debug: false,
   },
   {
     name: "table-complex",
-    skip: false,
+    debug: false,
   },
   {
     name: "tabs",
-    skip: false,
+    debug: false,
   },
   {
     name: "codeblock",
-    skip: false,
+    debug: false,
   },
   {
     name: "list",
-    skip: false,
+    debug: false,
   },
   {
     name: "blockquote",
-    skip: false,
+    debug: false,
   },
 ]
 
-describe.each(tests.filter((test) => !test.skip))("$name", ({ name }) => {
-  test(`${name}`, async () => {
-    const input = await readFile(path.join(cwd(), `tests/testdata/${name}.input.md`), {
+describe.each(tests)("$name", ({ name, debug }) => {
+  test.runIf(debug)(`DEBUG: ${name}`, async () => {
+    const input = await readFile(path.join(cwd(), `tests/testdata/${name}.md`), {
       encoding: "utf-8",
     })
 
-    const output = await readFile(path.join(cwd(), `tests/testdata/${name}.output.mdx`), {
-      encoding: "utf-8",
-    })
-
-    const outputAst = mdxToAST(output)
-
-    removePosition(outputAst, new Set(["position"]))
-
-    await writeFile(
-      path.join(cwd(), `tests/generated_data/${name}.output-ast.json`),
-      JSON.stringify(outputAst, null, 2),
-    )
-    const generated = transformDocument({ document: input, config })
+    const generated = convertContent({ content: input, markdocConfig: config })
 
     await writeFile(
       path.join(cwd(), `tests/generated_data/${name}.generated-ast.json`),
@@ -137,7 +124,15 @@ describe.each(tests.filter((test) => !test.skip))("$name", ({ name }) => {
       path.join(cwd(), `tests/generated_data/${name}.generated.mdx`),
       generated.rendered ?? "",
     )
+  })
 
-    //expect(generated?.rendered).toEqual(output)
+  test.runIf(!debug)(`${name}`, async () => {
+    const input = await readFile(path.join(cwd(), `tests/testdata/${name}.md`), {
+      encoding: "utf-8",
+    })
+
+    const generated = convertContent({ content: input, markdocConfig: config })
+
+    expect(generated.parsed).toMatchSnapshot()
   })
 })
