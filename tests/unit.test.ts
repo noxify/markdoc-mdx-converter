@@ -4,7 +4,7 @@ import { cwd } from "process"
 import type { Config } from "@markdoc/markdoc"
 import { describe, expect, test } from "vitest"
 
-import { convertContent } from "../src"
+import { convertContent } from "../src/converter"
 
 const config: Config = {
   nodes: {},
