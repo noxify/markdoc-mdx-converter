@@ -32,4 +32,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
+tests/generated_data/*
+!tests/generated_data/.gitkeep
 
+.cache
