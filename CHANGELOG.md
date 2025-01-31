@@ -1,5 +1,11 @@
 # @noxify/markdoc-mdx-converter
 
+## 0.0.3
+
+### Patch Changes
+
+- c5055d2: add MIT license file
+
 ## 0.0.2
 
 ### Patch Changes
