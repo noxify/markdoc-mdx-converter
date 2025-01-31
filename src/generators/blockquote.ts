@@ -1,13 +1,13 @@
 import type { Tag } from "@markdoc/markdoc"
-import type { Paragraph } from "mdast"
+import type { Blockquote } from "mdast"
 
 import type { TagReplacer } from "../parser"
 import { isTag } from "../helpers"
 import { parseTagElement } from "../parser"
 
-export function generateParagraph(node: Tag, tagReplacer: TagReplacer): Paragraph {
+export function generateBlockquote(node: Tag, tagReplacer: TagReplacer): Blockquote {
   return {
-    type: "paragraph",
+    type: "blockquote",
     children: node.children
       .map((ele) => {
         if (!isTag(ele)) {
@@ -16,6 +16,6 @@ export function generateParagraph(node: Tag, tagReplacer: TagReplacer): Paragrap
 
         return parseTagElement(ele, tagReplacer)
       })
-      .filter((ele) => !!ele) as Paragraph["children"],
+      .filter((ele) => !!ele) as Blockquote["children"],
   }
 }

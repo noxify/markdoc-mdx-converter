@@ -19,6 +19,16 @@ import {
   generateTab,
   generateTabs,
 } from "./generators"
+import { generateBlockquote } from "./generators/blockquote"
+import { generateListItem } from "./generators/li"
+import { generateOrderedList } from "./generators/ol"
+import { generateTable } from "./generators/table"
+import { generateTableBody } from "./generators/tbody"
+import { generateTableCell } from "./generators/td"
+import { generateTableHead } from "./generators/th"
+import { generateTableHeader } from "./generators/thead"
+import { generateTableRow } from "./generators/tr"
+import { generateUnorderedList } from "./generators/ul"
 import { tagParser } from "./parser"
 
 export function mdxToAST(input: string) {
@@ -62,6 +72,16 @@ export function transformDocument({
     pre: generateCodeblock,
     Tab: generateTab,
     Tabs: generateTabs,
+    table: generateTable,
+    thead: generateTableHeader,
+    tbody: generateTableBody,
+    tr: generateTableRow,
+    td: generateTableCell,
+    th: generateTableHead,
+    ul: generateUnorderedList,
+    ol: generateOrderedList,
+    li: generateListItem,
+    blockquote: generateBlockquote,
   }
 
   const parsed = tagParser(markdocTree, replacerConfig)

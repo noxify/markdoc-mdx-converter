@@ -32,8 +32,8 @@ export function parseTagElement(
 ) {
   if (!tagReplacer[ele.name]) {
     // eslint-disable-next-line no-console
-    console.warn(`No tag replacer found for: `, inspect(ele))
-    return null
+    console.warn(`SKIPPING '${ele.name}' - No tag replacer found for: `, inspect(ele))
+    return
   }
   const parsedTag = tagReplacer[ele.name]?.(ele, tagReplacer)
   return parsedTag

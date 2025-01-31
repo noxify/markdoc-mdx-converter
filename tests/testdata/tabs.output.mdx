@@ -11,12 +11,14 @@ description: Some description
     <TabsTrigger value="Code">Code</TabsTrigger>
   </TabsList>
   <TabsContent value="Preview">preview content</TabsContent>
-  <TabsContent value="Code">
-  code content
 
-```js
-// js codeblock
-```
+  <TabsContent value="Code" default={true}>
+    code content
+
+    ```js
+    // js codeblock
+
+    ```
 
   </TabsContent>
 </Tabs>

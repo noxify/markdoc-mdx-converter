@@ -1,5 +1,4 @@
 import type { Tag } from "@markdoc/markdoc"
-import type { BlockContent, DefinitionContent } from "mdast"
 import type { MdxJsxFlowElement } from "mdast-util-mdx"
 
 import type { TagReplacer } from "../parser"
@@ -31,6 +30,6 @@ export function generateTab(node: Tag, tagReplacer: TagReplacer): MdxJsxFlowElem
 
         return parseTagElement(ele, tagReplacer)
       })
-      .filter((ele) => !!ele) as (BlockContent | DefinitionContent)[],
+      .filter((ele) => !!ele) as MdxJsxFlowElement["children"],
   }
 }

@@ -28,7 +28,8 @@ description: Some description
 - Codecademy Hat
 - True
 - 9.99
-  {% /table %}
+
+{% /table %}
 
 ## Complex table w/ colspan
 
@@ -54,7 +55,8 @@ description: Some description
 
 - Codecademy Hat
 - Not in stock {% colspan=2 %}
-  {% /table %}
+
+{% /table %}
 
 ## Complex table w/ rich content ( maybe out of scope? )
 
@@ -68,6 +70,8 @@ description: Some description
 
 - Python Hat
 - - list element 1
+    1. list element 3
+    2. list element 4
   - list element 2
 - 23.99
 
@@ -82,4 +86,5 @@ description: Some description
 - Codecademy Hat
 - True
 - 9.99
-  {% /table %}
+
+{% /table %}

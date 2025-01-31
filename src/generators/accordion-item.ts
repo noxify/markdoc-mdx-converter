@@ -1,5 +1,4 @@
 import type { Tag } from "@markdoc/markdoc"
-import type { BlockContent, DefinitionContent } from "mdast"
 import type { MdxJsxFlowElement } from "mdast-util-mdx"
 
 import type { TagReplacer } from "../parser"
@@ -20,6 +19,6 @@ export function generateAccordionItem(node: Tag, tagReplacer: TagReplacer): MdxJ
       }
 
       return parseTagElement(ele, tagReplacer)
-    }) as (BlockContent | DefinitionContent)[],
+    }) as MdxJsxFlowElement["children"],
   }
 }

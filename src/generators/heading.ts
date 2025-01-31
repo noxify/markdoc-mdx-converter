@@ -1,5 +1,5 @@
 import type { Tag } from "@markdoc/markdoc"
-import type { Heading, PhrasingContent } from "mdast"
+import type { Heading } from "mdast"
 import { createRegExp, digit, oneOrMore } from "magic-regexp"
 
 import type { TagReplacer } from "../parser"
@@ -36,6 +36,6 @@ export function generateHeading(node: Tag, tagReplacer: TagReplacer): Heading {
       // since we could also have non-plain text in a heading ( e.g. some inline code )
       // we have to parse them, to get it rendered correctly
       return parseTagElement(ele, tagReplacer)
-    }) as PhrasingContent[],
+    }) as Heading["children"],
   }
 }

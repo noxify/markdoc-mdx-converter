@@ -15,11 +15,9 @@ const config: Config = {
       attributes: {
         title: {
           type: String,
-          default: "default title",
         },
         type: {
           type: String,
-          default: "default",
         },
       },
     },
@@ -78,27 +76,34 @@ const tests = [
   },
   {
     name: "mermaid",
-    skip: true,
+    skip: false,
   },
   {
     name: "railroad",
-    skip: true,
+    skip: false,
   },
   {
     name: "table-simple",
-    skip: true,
+    skip: false,
   },
   {
     name: "table-complex",
-    skip: true,
+    skip: false,
   },
   {
     name: "tabs",
     skip: false,
   },
-
   {
     name: "codeblock",
+    skip: false,
+  },
+  {
+    name: "list",
+    skip: false,
+  },
+  {
+    name: "blockquote",
     skip: false,
   },
 ]
