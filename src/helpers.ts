@@ -1,8 +1,8 @@
 import type { MdxJsxAttribute, MdxJsxAttributeValueExpression } from "mdast-util-mdx"
-import { Tag } from "@markdoc/markdoc"
+import Markdoc from "@markdoc/markdoc"
 
 export function isTag(ele?: unknown) {
-  return !(ele === null || typeof ele !== "object" || !Tag.isTag(ele))
+  return !(ele === null || typeof ele !== "object" || !Markdoc.Tag.isTag(ele))
 }
 
 export function convertAttributeValue(value: unknown) {
