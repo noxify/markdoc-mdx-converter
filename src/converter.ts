@@ -27,8 +27,11 @@ import {
   generateTabs,
   generateUnorderedList,
 } from "./generators"
+import { generateDelete } from "./generators/delete"
+import { generateEmphasis } from "./generators/emphasis"
 import { generateImage } from "./generators/image"
 import { generateLink } from "./generators/link"
+import { generateStrong } from "./generators/strong"
 import { tagParser } from "./parser"
 
 /**
@@ -64,6 +67,9 @@ export function convertContent({
   const replacerConfig = {
     p: generateParagraph,
     a: generateLink,
+    s: generateDelete,
+    strong: generateStrong,
+    em: generateEmphasis,
     img: generateImage,
     blockquote: generateBlockquote,
     h1: generateHeading,
