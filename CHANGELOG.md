@@ -1,5 +1,15 @@
 # @noxify/markdoc-mdx-converter
 
+## 0.1.0
+
+### Minor Changes
+
+- e2c8836: add new converters
+
+  - Support for `strong`
+  - Support for `delete`
+  - Support for `emphasis`
+
 ## 0.0.4
 
 ### Patch Changes
