@@ -1,5 +1,12 @@
 # @noxify/markdoc-mdx-converter
 
+## 0.0.4
+
+### Patch Changes
+
+- 85a5728: - update deps
+  - Using `Markdoc.Tag` instead `Tag` inside the `isTag` function
+
 ## 0.0.3
 
 ### Patch Changes
