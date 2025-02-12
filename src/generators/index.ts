@@ -8,6 +8,8 @@ export * from "./li"
 export * from "./heading"
 export * from "./paragraph"
 export * from "./blockquote"
+export * from "./link"
+export * from "./image"
 
 export * from "./tabs"
 export * from "./tab"

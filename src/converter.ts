@@ -27,6 +27,8 @@ import {
   generateTabs,
   generateUnorderedList,
 } from "./generators"
+import { generateImage } from "./generators/image"
+import { generateLink } from "./generators/link"
 import { tagParser } from "./parser"
 
 /**
@@ -61,6 +63,8 @@ export function convertContent({
 
   const replacerConfig = {
     p: generateParagraph,
+    a: generateLink,
+    img: generateImage,
     blockquote: generateBlockquote,
     h1: generateHeading,
     h2: generateHeading,
