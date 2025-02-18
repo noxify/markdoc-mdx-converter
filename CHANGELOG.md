@@ -1,5 +1,11 @@
 # @noxify/markdoc-mdx-converter
 
+## 0.1.1
+
+### Patch Changes
+
+- bde0ed6: There was an issue while converting `strong`, `emphasis` and `delete`.
+
 ## 0.1.0
 
 ### Minor Changes
