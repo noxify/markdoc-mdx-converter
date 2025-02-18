@@ -11,7 +11,10 @@ export function generateDelete(node: Tag, tagReplacer: TagReplacer): Delete {
     children: node.children
       .map((ele) => {
         if (!isTag(ele)) {
-          return ele as string
+          return {
+            type: "text",
+            value: ele,
+          }
         }
 
         return parseTagElement(ele, tagReplacer)
