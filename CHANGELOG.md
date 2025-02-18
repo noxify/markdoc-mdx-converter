@@ -1,5 +1,11 @@
 # @noxify/markdoc-mdx-converter
 
+## 0.1.2
+
+### Patch Changes
+
+- c79bbf0: export TagReplacer type
+
 ## 0.1.1
 
 ### Patch Changes
